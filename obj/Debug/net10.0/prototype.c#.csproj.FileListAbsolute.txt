@@ -1,0 +1,14 @@
+C:\prototype.c#\bin\Debug\net10.0\prototype.c#.exe
+C:\prototype.c#\bin\Debug\net10.0\prototype.c#.deps.json
+C:\prototype.c#\bin\Debug\net10.0\prototype.c#.runtimeconfig.json
+C:\prototype.c#\bin\Debug\net10.0\prototype.c#.dll
+C:\prototype.c#\bin\Debug\net10.0\prototype.c#.pdb
+C:\prototype.c#\obj\Debug\net10.0\prototype.c#.GeneratedMSBuildEditorConfig.editorconfig
+C:\prototype.c#\obj\Debug\net10.0\prototype.c#.AssemblyInfoInputs.cache
+C:\prototype.c#\obj\Debug\net10.0\prototype.c#.AssemblyInfo.cs
+C:\prototype.c#\obj\Debug\net10.0\prototype.c#.csproj.CoreCompileInputs.cache
+C:\prototype.c#\obj\Debug\net10.0\prototype.c#.dll
+C:\prototype.c#\obj\Debug\net10.0\refint\prototype.c#.dll
+C:\prototype.c#\obj\Debug\net10.0\prototype.c#.pdb
+C:\prototype.c#\obj\Debug\net10.0\prototype.c#.genruntimeconfig.cache
+C:\prototype.c#\obj\Debug\net10.0\ref\prototype.c#.dll
