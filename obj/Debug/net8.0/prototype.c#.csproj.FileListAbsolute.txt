@@ -1,0 +1,15 @@
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/prototype.c#.GeneratedMSBuildEditorConfig.editorconfig
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/prototype.c#.AssemblyInfoInputs.cache
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/prototype.c#.AssemblyInfo.cs
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/prototype.c#.csproj.CoreCompileInputs.cache
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/prototype.c#.sourcelink.json
+/home/ravel/projetos/Game_Igor/game-protorype/bin/Debug/net8.0/prototype.c#
+/home/ravel/projetos/Game_Igor/game-protorype/bin/Debug/net8.0/prototype.c#.deps.json
+/home/ravel/projetos/Game_Igor/game-protorype/bin/Debug/net8.0/prototype.c#.runtimeconfig.json
+/home/ravel/projetos/Game_Igor/game-protorype/bin/Debug/net8.0/prototype.c#.dll
+/home/ravel/projetos/Game_Igor/game-protorype/bin/Debug/net8.0/prototype.c#.pdb
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/prototype.c#.dll
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/refint/prototype.c#.dll
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/prototype.c#.pdb
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/prototype.c#.genruntimeconfig.cache
+/home/ravel/projetos/Game_Igor/game-protorype/obj/Debug/net8.0/ref/prototype.c#.dll
