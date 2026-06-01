@@ -7,6 +7,7 @@ namespace prototype
         {
             health = 100;
             damage = 10;
+            xpDrop = 20;
         }
 
         public void Attack(Character target)
@@ -23,6 +24,7 @@ namespace prototype
         {
             health = 60;
             damage = 7;
+            xpDrop = 20;
         }
     }
 
@@ -32,15 +34,17 @@ namespace prototype
         {
             health = 40;
             damage = 3;
+            xpDrop = 10;
         }
     }
 
-    public class Throll : Enemy
+    public class Troll : Enemy
     {
-        public Throll()
+        public Troll()
         {
             health = 80;
             damage = 10;
+            xpDrop = 30;
         }
     }
 
@@ -50,6 +54,7 @@ namespace prototype
         {
             health = 150;
             damage = 20;
+            xpDrop = 50;
         }
     }
 
@@ -59,6 +64,7 @@ namespace prototype
         {
             health = 120;
             damage = 15;
+            xpDrop = 40;
         }
     }
 
@@ -68,6 +74,7 @@ namespace prototype
         {
             health = 200;
             damage = 25;
+            xpDrop = 60;
         }
     }
 
@@ -77,6 +84,7 @@ namespace prototype
         {
             health = 180;
             damage = 30;
+            xpDrop = 70;
         }
     }
 
@@ -86,6 +94,7 @@ namespace prototype
         {
             health = 250;
             damage = 35;
+            xpDrop = 80;
         }
     }
 
@@ -95,6 +104,7 @@ namespace prototype
         {
             health = 400;
             damage = 50;
+            xpDrop = 100;
         }
     }
 }

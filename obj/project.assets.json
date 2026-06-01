@@ -8,24 +8,25 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/ravel/.nuget/packages/": {}
+    "/home/igor/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ravel/projetos/Game_Igor/game-protorype/prototype.c#.csproj",
+      "projectUniqueName": "/home/igor/Documentos/prototype.c#/prototype.c#.csproj",
       "projectName": "prototype.c#",
-      "projectPath": "/home/ravel/projetos/Game_Igor/game-protorype/prototype.c#.csproj",
-      "packagesPath": "/home/ravel/.nuget/packages/",
-      "outputPath": "/home/ravel/projetos/Game_Igor/game-protorype/obj/",
+      "projectPath": "/home/igor/Documentos/prototype.c#/prototype.c#.csproj",
+      "packagesPath": "/home/igor/.nuget/packages/",
+      "outputPath": "/home/igor/Documentos/prototype.c#/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/ravel/.nuget/NuGet/NuGet.Config"
+        "/home/igor/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -43,7 +44,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -59,12 +61,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.27, 8.0.27]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.420/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
