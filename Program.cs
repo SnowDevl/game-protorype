@@ -45,26 +45,21 @@ namespace prototype
 
                 return (Enemy)Activator.CreateInstance(enemies[rand.Next(0, 3)])!;
                 
-                throw new Exception("invalid Level");
-                
             }
             else if (level <= 6)
             {
                 return (Enemy)Activator.CreateInstance(enemies[rand.Next(0, 6)])!;
 
-                throw new Exception("invalid Level");
             }
             else if (level <= 9)
             {
                 return (Enemy)Activator.CreateInstance(enemies[rand.Next(0, 9)])!;
 
-                throw new Exception("invalid Level");
             }
             else
             {
                 return (Enemy)Activator.CreateInstance(enemies[rand.Next(0, enemies.Count)])!;
 
-                throw new Exception("invalid Level");
             }
         }
 
@@ -84,7 +79,7 @@ namespace prototype
             Console.WriteLine(" ");
 
             Console.WriteLine("choose your action");
-            Console.WriteLine("1 - battle againist the enemy");
+            Console.WriteLine("1 - battle against the enemy");
             Console.WriteLine("2 - run away");
             Console.WriteLine("3 - use health potion");
             Console.WriteLine(" ");
@@ -108,10 +103,17 @@ namespace prototype
                                 Console.WriteLine(" ");
                                 break;
                             case "2":
-                                Console.WriteLine($"\nyou used a health potion, your health is now {player.health +20} ");
-                                player.health += 20;
-                                Console.WriteLine(" ");
+                                if (player.potions > 0){
+                                    player.potions --;
+                                    player.Heal(player.heal);
+                                    Console.WriteLine($"\nyou used a health potion, your health is now {player.health} you have {player.potions} potions now ");
+                                    Console.WriteLine(" ");}
+                                else
+                                    {
+                                        Console.WriteLine("you don't have potions anymore");
+                                    }
                                 break;
+                                
                             default:
                                 Console.WriteLine("\ninvalid choice, you blewup and died :)");
                                 player.health = 0;
@@ -148,8 +150,9 @@ namespace prototype
                         Console.WriteLine("you choose to run away, you are a coward!");
                         break;
                     case "3":
+                        player.Heal(player.heal);
                         Console.WriteLine("you chose to use the health potion, you healed some health points!");
-                        player.health += 20;
+                        
                         Console.WriteLine($"your health is now {player.health}");
                         break;
                     default:
@@ -163,6 +166,7 @@ namespace prototype
 
     public class Character
     {
+        public int MaxHealth;
         public int health;
         public int damage;
         public int xp;
@@ -170,6 +174,7 @@ namespace prototype
         public int critDamage;
         public int heal;
         public int xpDrop;
+        public int potions;
         static Random rand = new Random();
 
         public void TakeDamage(int damage){
@@ -177,7 +182,7 @@ namespace prototype
             if (rand.Next(0, 101) <= 20)
             {
                 critDamage = damage * 2;
-                Console.WriteLine($"you hited a critical strite and dealth {critDamage} damage!");
+                Console.WriteLine($"landed a critical strite and dealt {critDamage} damage!");
                 health = Math.Max(0, health -= critDamage);
                 Console.WriteLine(" ");
             }
@@ -194,6 +199,12 @@ namespace prototype
 
     
 
+
+    public void Heal(int amount)
+        {
+            health = Math.Min(MaxHealth, health + amount);
+        }
+
     public void LevelUp()
         {
             while (xp >= 100)
@@ -201,7 +212,9 @@ namespace prototype
                 lv++;
                 xp -= 100;
                 damage += 5;
-                health += 20;
+                MaxHealth += 20;
+                health = Math.Min(MaxHealth, health + 20);
+                heal += 5;
                 Console.WriteLine($"you leveled up! you are now level {lv}" );
             }
         }
@@ -213,10 +226,6 @@ namespace prototype
             Console.WriteLine($"the enemy was defeated and you gained {amount} xp!");
             Console.WriteLine($"you need {xpNeeded} xp to level up!");
             LevelUp();
-        }
-
-    public void criticalStrike()
-        {
         }
 
     }   

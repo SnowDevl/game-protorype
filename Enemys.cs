@@ -12,8 +12,9 @@ namespace prototype
 
         public void Attack(Character target)
         {
-            Console.WriteLine($"the enemy attacket you and dealth {damage} damage!");
+            Console.WriteLine($"the enemy hited you and dealth {damage} damage!");
             target.TakeDamage(damage);
+            Thread.Sleep(100);
         }
 
     }

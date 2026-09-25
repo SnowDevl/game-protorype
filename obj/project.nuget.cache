@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ibX7bI4m8G8=",
+  "dgSpecHash": "tkStgNQsh/4=",
   "success": true,
   "projectFilePath": "/home/igor/Documentos/prototype.c#/prototype.c#.csproj",
   "expectedPackageFiles": [
-    "/home/igor/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.27/microsoft.netcore.app.host.linux-x64.8.0.27.nupkg.sha512"
+    "/home/igor/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.31/microsoft.netcore.app.host.linux-x64.8.0.31.nupkg.sha512"
   ],
   "logs": []
 }
