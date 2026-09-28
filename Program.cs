@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace prototype
 {
@@ -71,11 +72,25 @@ namespace prototype
 
             while (player.health > 0){
             Enemy enemy = SpawnEnemy(player.lv);
-            Console.WriteLine($"\nan {enemy.GetType().Name} appears!");
+            Console.Write($"\nan ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{enemy.GetType().Name}");
+            Console.ResetColor();
+            Console.Write($" appears!");
             Console.WriteLine(" ");
 
-            Console.WriteLine($"Player health: {player.health}");
-            Console.WriteLine($"Enemy health: {enemy.health}");
+            
+            Console.Write($"Player health: ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write($"{player.health}");
+            Console.ResetColor();
+
+
+            Console.Write($"\nEnemy health: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{enemy.health}\n");
+            Console.ResetColor();
+            
             Console.WriteLine(" ");
 
             Console.WriteLine("choose your action");
@@ -95,22 +110,38 @@ namespace prototype
                         Console.WriteLine("2 - use health potion");
                         Console.WriteLine(" ");
                         switch (Console.ReadLine())
+
                         {
                             case "1":
                                 player.Attack(enemy);
-                                Console.WriteLine($"\nthe enemy health is now {enemy.health}");
+                                Console.Write($"\nthe enemy health is now ");
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write($"{enemy.health}\n");
+                                Console.ResetColor();
                                 Console.WriteLine("--------------------------------");
                                 Console.WriteLine(" ");
+
                                 break;
                             case "2":
                                 if (player.potions > 0){
                                     player.potions --;
                                     player.Heal(player.heal);
+
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    
                                     Console.WriteLine($"\nyou used a health potion, your health is now {player.health} you have {player.potions} potions now ");
-                                    Console.WriteLine(" ");}
+                                    Console.ResetColor();
+
+                                    Console.WriteLine(" ");
+                                    
+                                    }
                                 else
                                     {
+                                        Console.ForegroundColor = ConsoleColor.DarkGray;
+
                                         Console.WriteLine("you don't have potions anymore");
+
+                                        Console.ResetColor();
                                     }
                                 break;
                                 
@@ -119,30 +150,44 @@ namespace prototype
                                 player.health = 0;
                                 break;
                         }
+                        Console.WriteLine("press any key to continue");
+                        Console.ReadLine();
+                        Console.Clear();
                         if (enemy.health <= 0)
                         {
+                            Console.ForegroundColor = ConsoleColor.Magenta;
                             Console.WriteLine("you defeated the enemy!");
                             player.GainXP(enemy.xpDrop);
                             Console.WriteLine(" ");
+                            Console.ResetColor();
                             break;
                         }
 
-                        Thread.Sleep(50);
+                        Thread.Sleep(500);
 
                         enemy.Attack(player);
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine($"the enemy dealt {enemy.damage} damage to you!");
-                        Console.WriteLine($"\nyour health is now {player.health}");
+                        Console.ResetColor();
+                        Console.Write($"\nyour health is now ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write($"{player.health}\n");
+                        Console.ResetColor();
                         Console.WriteLine("================================");
                         Console.WriteLine(" ");
                         if (player.health <= 0)
                         {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+
                             Console.WriteLine("you were defeated by the enemy!");
                             Console.WriteLine("game over!");
+                            Console.ResetColor();
+                            
                             Console.WriteLine("Thanks for playing! :)");
                             break;
                         }  
 
-                        Thread.Sleep(50);
+                        Thread.Sleep(500);
 
                     }
                     break;
@@ -151,12 +196,16 @@ namespace prototype
                         break;
                     case "3":
                         player.Heal(player.heal);
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("you chose to use the health potion, you healed some health points!");
-                        
                         Console.WriteLine($"your health is now {player.health}");
+                        Console.ResetColor();
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
                         Console.WriteLine("invalid choice, you blewup and died :)");
+                        player.health = 0;
+                        Console.ResetColor();
                         break;
 
             }
@@ -181,17 +230,21 @@ namespace prototype
 
             if (rand.Next(0, 101) <= 20)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 critDamage = damage * 2;
-                Console.WriteLine($"landed a critical strite and dealt {critDamage} damage!");
+                Console.WriteLine($"hited a critical strite and dealt {critDamage} damage!");
                 health = Math.Max(0, health -= critDamage);
                 Console.WriteLine(" ");
+                Console.ResetColor();
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("you missed the critical strike! you dealth your normal damage!");
                 critDamage = damage;
                 health = Math.Max(0, health -= damage);
                 Console.WriteLine(" ");
+                Console.ResetColor();
             }
 
         Console.WriteLine($"dealed {critDamage} damage!");
@@ -215,7 +268,9 @@ namespace prototype
                 MaxHealth += 20;
                 health = Math.Min(MaxHealth, health + 20);
                 heal += 5;
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine($"you leveled up! you are now level {lv}" );
+                Console.ResetColor();
             }
         }
 

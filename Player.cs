@@ -14,7 +14,9 @@ namespace prototype
         }
 
         public void Attack(Character target){
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"you hited the enemy and dealth {damage} damage!");
+                Console.ResetColor();
                 target.TakeDamage(damage);
                 Thread.Sleep(100);
             }
